@@ -47,15 +47,16 @@
         &::after{
           content: "";
           position: absolute;
-          width: 150px;
-          height: 150px;
+          width: 450px;
+          height: 450px;
           top: 0;
-          right: 0;
+          right: -100px;
           transform: translateY(-50%);
-          background: var(--Primary-Color);
+          background: url("/public/sphere-blur.png") center center;
+          background-size: cover;
+          background-repeat: no-repeat;
           border-radius: 100%;
           z-index: -1;
-          filter: blur(80px);
         }
       }
       .ButtonWithP{
@@ -74,15 +75,16 @@
           &::after{
             content: "";
             position: absolute;
-            width: 150px;
-            height: 150px;
+            width: 400px;
+            height: 400px;
             top: 50%;
-            right: 0;
+            right: -100px;
             transform: translateY(-50%);
-            background: var(--Primary-Color);
+            background: url("/public/sphere-blur.png") center center;
+            background-size: cover;
+            background-repeat: no-repeat;
             border-radius: 100%;
             z-index: -1;
-            filter: blur(80px);
           }
         }
 
@@ -108,15 +110,16 @@
           &::after{
             content: "";
             position: absolute;
-            width: 150px;
-            height: 150px;
+            width: 500px;
+            height: 500px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: var(--Primary-Color);
+            background: url("/public/sphere-blur.png") center center;
+            background-size: cover;
+            background-repeat: no-repeat;
             border-radius: 100%;
             z-index: -1;
-            filter: blur(80px);
           }
         }
       }

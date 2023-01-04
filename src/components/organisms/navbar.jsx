@@ -36,10 +36,6 @@ export default function Navbar() {
         })
     }, [])
 
-    useEffect(() => {
-    })
-
-
     return (
         <div className={s.Navbar}>
             <div className={s.Container}>

@@ -1,7 +1,7 @@
 import s from "./styles/home.module.scss"
 import {GitPullRequest} from "react-feather";
 
-export default function HomePage() {
+export default () => {
     return (
         <>
             <header className={s.Header}>
@@ -18,7 +18,7 @@ export default function HomePage() {
                         </div>
                     </div>
                     <div className={s.Video}>
-                        <video src="/original-d7d1fab1bfcb5eb34fd2f82790ac0749.mp4" loop={true} preload={true} autoPlay={true} muted={true}></video>
+                        <video src="/Vídeo sin título ‐ Hecho con Clipchamp (1).mp4" loop={true} autoPlay={true} muted={true}></video>
                     </div>
                 </div>
             </header>
