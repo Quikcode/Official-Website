@@ -1,0 +1,193 @@
+@keyframes Glowing {
+  0%{
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100%{
+    background-position: 0 0;
+  }
+}
+
+.Navbar{
+  .Container {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    height: var(--Height-Navbar);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Logo{
+      display: flex;
+      align-items: center;
+      h1{
+        font-size: 18px;
+        margin-left: 10px;
+        font-weight: 500;
+      }
+    }
+
+
+    .Navegation{
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      z-index: 10;
+
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--Letter-Primary);
+        &.Active{
+          color: var(--Primary-Color);
+        }
+
+        &.Github {
+          background: white;
+          padding: 0 25px;
+          color: var(--Letter-Secondary);
+          font-weight: 600;
+          border-radius: 50px;
+          font-size: 16px;
+          gap: 10px;
+          position: relative;
+
+          svg {
+            width: 17px;
+            height: 17px;
+            stroke-width: 2.5px;
+          }
+
+          &::before{
+            content: '';
+            background: linear-gradient(45deg,
+                    #000000, #191919, #303030, #474747,
+                    #5e5e5e, #757575, #8c8c8c, #a2a2a2,
+                    #b9b9b9, #d0d0d0, #e7e7e7, #ffffff,
+                    #ffffff, #e7e7e7, #d0d0d0, #b9b9b9,
+                    #a2a2a2, #8c8c8c, #757575, #5e5e5e,
+                    #474747, #303030, #191919, #000000
+            );
+            position: absolute;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: Glowing 20s linear infinite;
+            border-radius: 50px;
+
+          }
+
+        }
+      }
+
+      @media(max-width: 700px){
+        position: fixed;
+        top: 0;
+        right: -300px;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        height: 100vh;
+        transition: .3s;
+        padding-top: 120px;
+        gap: 10px;
+
+        background: white;
+
+        a{
+          color: black;
+          width: 90%;
+          &.Github{
+            background: black;
+            color: white;
+
+          }
+        }
+
+        &.Open {
+          right: 0;
+        }
+
+      }
+
+    }
+    .ButtonMenu {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      z-index: 11;
+
+
+      @media(max-width: 700px ){
+        display: flex;
+      }
+
+      div{
+        width: 100%;
+        position: relative;
+
+        &:before{
+          content: "";
+          width: 100%;
+          height: 2px;
+          top: -5px;
+          left: 0;
+          transition: .3s;
+
+          background: white;
+          position: absolute;
+
+        }
+        &:after{
+          content: "";
+          width: 75%;
+          height: 2px;
+          top: 5px;
+          left: 0;
+          transition: .3s;
+
+          background: white;
+          position: absolute;
+        }
+
+        &.Open {
+          &:before{
+            content: "";
+            top: 0;
+            left: 0;
+            transform: rotate(-45deg);
+            background: black;
+
+          }
+          &:after{
+            content: "";
+            width: 100%;
+            top: 0;
+            left: 0;
+            transform: rotate(45deg);
+            background: black;
+
+          }
+        }
+      }
+    }
+
+  }
+}
